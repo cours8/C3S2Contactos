@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.C3S2Contactos">
+        <activity android:name=".DetallesContacto"></activity>
         <activity android:name=".EditarContacto">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

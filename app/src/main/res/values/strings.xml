@@ -6,4 +6,7 @@
     <string name="email_hint">Correo electrónico</string>
     <string name="descripcion_contacto_hint">Descripción del contacto</string>
     <string name="siguiente">Siguiente</string>
+    <string name="tvTitulo_confirmar">Confirmar contacto</string>
+    <string name="detalles_descripcion_hint">Descripción</string>
+    <string name="btnEditarDatos">Editar datos</string>
 </resources>
