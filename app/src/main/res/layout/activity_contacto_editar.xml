@@ -63,5 +63,16 @@
             android:hint="@string/descripcion_contacto_hint"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Toma tanto espacio como puede para empujar hacia abajo
+         el resto de los elementos -->
+    <View android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <Button
+        android:id="@+id/siguiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/siguiente"/>
 
 </LinearLayout>
