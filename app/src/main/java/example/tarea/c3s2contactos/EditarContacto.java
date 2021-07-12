@@ -13,6 +13,17 @@ public class EditarContacto extends AppCompatActivity {
 
     public static final String INTENT_KEY_EDITAR = "EDITAR";
 
+    public static void startEditar(android.content.Context contexto,String[] contacto) {
+        Intent i = new Intent(contexto, EditarContacto.class);
+        i.putExtra(EditarContacto.INTENT_KEY_EDITAR, contacto);
+        contexto.startActivity(i);
+    }
+
+    public static void startEditar(android.content.Context contexto, Contacto contacto) {
+        String[] serializado = (null == contacto) ? null : contacto.serializar();
+        startEditar(contexto,serializado);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +38,11 @@ public class EditarContacto extends AppCompatActivity {
 
     public void onSiguienteClick(View v) {
         try {
-            Intent i = new Intent(this, DetallesContacto.class);
             String[] serializado = null;
-            i.putExtra(DetallesContacto.INTENT_KEY_CONFIRMAR, serializado);
-            startActivity(i);
+//            Intent i = new Intent(this, DetallesContacto.class);
+//            i.putExtra(DetallesContacto.INTENT_KEY_CONFIRMAR, serializado);
+//            startActivity(i);
+            DetallesContacto.startConfirmar(this,serializado);
             finish();
         } catch(Exception ex) {
             Log.i("onSiguienteClick",ex.getMessage());

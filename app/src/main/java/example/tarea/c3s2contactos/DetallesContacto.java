@@ -16,6 +16,12 @@ public class DetallesContacto extends AppCompatActivity {
     public static final String INTENT_KEY_CONFIRMAR = "CONFIRMAR";
     protected Contacto contacto;
 
+    public static void startConfirmar(android.content.Context context, String[] serializado) {
+        Intent i = new Intent(context, DetallesContacto.class);
+        i.putExtra(DetallesContacto.INTENT_KEY_CONFIRMAR, serializado);
+        context.startActivity(i);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +40,10 @@ public class DetallesContacto extends AppCompatActivity {
     public void onEditarDatosClick(View v) {
         Snackbar.make(v,"Intentando",Snackbar.LENGTH_SHORT).show();
         try {
-            Intent i = new Intent(this, EditarContacto.class);
-            i.putExtra(EditarContacto.INTENT_KEY_EDITAR, null == contacto ? null : contacto.serializar());
-            startActivity(i);
+            EditarContacto.startEditar(this,contacto);
+//            Intent i = new Intent(this, EditarContacto.class);
+//            i.putExtra(EditarContacto.INTENT_KEY_EDITAR, null == contacto ? null : contacto.serializar());
+//            startActivity(i);
             finish();
         } catch(Exception ex) {
             Log.i("onEditarDatosClick",ex.getMessage());
