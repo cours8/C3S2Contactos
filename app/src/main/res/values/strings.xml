@@ -11,4 +11,5 @@
     <string name="btnEditarDatos">Editar datos</string>
     <string name="errorAlEditar">Error al editar</string>
     <string name="errorAlVerDetalles">Error al ver detalles</string>
+    <string name="errorAlIniciar">Error al iniciar</string>
 </resources>

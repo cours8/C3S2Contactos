@@ -23,10 +23,15 @@ public class EditarContacto extends AppCompatActivity {
     }
 
     private void procesarIntentExtras() {
-        Bundle extras = getIntent().getExtras();
-        if(null==extras) return;
-        String[] editarSerializado = extras.getStringArray(INTENT_KEY_EDITAR);
-        if(null!=editarSerializado) onIntentEditar(editarSerializado);
+        try {
+            Bundle extras = getIntent().getExtras();
+            if (null == extras) return;
+            String[] editarSerializado = extras.getStringArray(INTENT_KEY_EDITAR);
+            if (null != editarSerializado) onIntentEditar(editarSerializado);
+        } catch(Exception ex) {
+            Log.i("procesarIntentExtras",ex.getMessage());
+            errorSnack(this.getCurrentFocus(),R.string.errorAlIniciar);
+        }
     }
 
     private void onIntentEditar(String[] editarSerializado) {
@@ -50,15 +55,13 @@ public class EditarContacto extends AppCompatActivity {
 
     private String getEditText(int idCampo) {
         View v = findViewById(idCampo);
-        if((null==v) || !(v instanceof EditText)) return null;
-        EditText et = (EditText) v;
+        if(!(v instanceof EditText)) return null;
         return ((EditText) v).getText().toString();
     }
 
     private void setEditText(int idCampo, String nuevoTexto) {
         View v = findViewById(idCampo);
-        if((null==v) || !(v instanceof EditText)) return;
-        EditText et = (EditText) v;
+        if(!(v instanceof EditText)) return;
         ((EditText) v).setText(nuevoTexto);
     }
 

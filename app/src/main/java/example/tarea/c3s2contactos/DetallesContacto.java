@@ -3,7 +3,6 @@ package example.tarea.c3s2contactos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -55,10 +54,15 @@ public class DetallesContacto extends AppCompatActivity {
     }
 
     private void procesarIntents() {
-        Bundle extras = getIntent().getExtras();
-        if(null==extras) return;
-        String[] confirmarSerializado = extras.getStringArray(INTENT_KEY_CONFIRMAR);
-        if(null!=confirmarSerializado) onIntentConfirmar(confirmarSerializado);
+        try {
+            Bundle extras = getIntent().getExtras();
+            if(null==extras) return;
+            String[] confirmarSerializado = extras.getStringArray(INTENT_KEY_CONFIRMAR);
+            if(null!=confirmarSerializado) onIntentConfirmar(confirmarSerializado);
+        } catch(Exception ex) {
+            Log.i("procesarIntents",ex.getMessage());
+            errorSnack(this.getCurrentFocus(),R.string.errorAlIniciar);
+        }
     }
 
     private void onIntentConfirmar(String[] confirmarSerializado) {
