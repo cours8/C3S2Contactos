@@ -20,6 +20,7 @@
     </style>
     <style name="DetallesContactoNombre" parent="Theme.AppCompat.Light">
         <item name="android:textSize">@dimen/detalles_nombre_completo</item>
+        <item name="android:textColor">@color/purple_500</item>
     </style>
 
     <dimen name="detalles_titulo">32sp</dimen>
