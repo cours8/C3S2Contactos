@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">C3S2Contactos</string>
     <string name="nombre_completo_hint">Nombre completo</string>
+    <string name="fecha_de_nacimiento_hint">Fecha de nacimiento</string>
+    <string name="telefono_hint">Teléfono</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="descripcion_contacto_hint">Descripción del contacto</string>
 </resources>
