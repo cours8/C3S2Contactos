@@ -20,9 +20,14 @@ public class Contacto {
         this.detallesContacto = detallesContacto;
     }
 
+    /**
+     * @param serializado Generado con `serializar()`.
+     */
     public Contacto(String[] serializado) {
         deserializar(serializado,true);
     }
+
+    public Contacto() {}
 
     public String getNombreCompleto() {
         return nombreCompleto;
@@ -107,11 +112,11 @@ public class Contacto {
                 sobreescribirNulos ? null : nombreCompleto);
         numeroTelefono = elementoDeArrayOValor(serializado, 1,
                 sobreescribirNulos ? null : numeroTelefono);
-        fechaNacimiento = elementoDeArrayOValor(serializado, 1,
+        fechaNacimiento = elementoDeArrayOValor(serializado, 2,
                 sobreescribirNulos ? null : fechaNacimiento);
-        correoElectronico = elementoDeArrayOValor(serializado, 1,
+        correoElectronico = elementoDeArrayOValor(serializado, 3,
                 sobreescribirNulos ? null : correoElectronico);
-        detallesContacto = elementoDeArrayOValor(serializado, 1,
+        detallesContacto = elementoDeArrayOValor(serializado, 4,
                 sobreescribirNulos ? null : detallesContacto);
     }
 
