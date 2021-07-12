@@ -9,4 +9,6 @@
     <string name="tvTitulo_confirmar">Confirmar contacto</string>
     <string name="detalles_descripcion_hint">Descripción</string>
     <string name="btnEditarDatos">Editar datos</string>
+    <string name="errorAlEditar">Error al editar</string>
+    <string name="errorAlVerDetalles">Error al ver detalles</string>
 </resources>
